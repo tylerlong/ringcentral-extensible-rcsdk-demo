@@ -1,6 +1,6 @@
 import SDK from '@ringcentral/sdk';
 import RingCentral from '@rc-ex/core';
-import RCSDKExtension from '@rc-ex/rcsdk';
+import RcSdkExtension from '@rc-ex/rcsdk';
 
 // @ringcentral/sdk
 const sdk = new SDK({
@@ -18,8 +18,8 @@ const sdk = new SDK({
 
   // ringcentral-extensible + rcsdk extension
   const rc = new RingCentral();
-  const rcsdkExtension = new RCSDKExtension(sdk);
-  await rc.installExtension(rcsdkExtension);
+  const rcSdkExtension = new RcSdkExtension(sdk);
+  await rc.installExtension(rcSdkExtension);
 
   // API call with @ringcentral/sdk as HTTP engine
   const extensionInfo = await rc.restapi().account().extension().get();
