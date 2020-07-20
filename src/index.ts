@@ -24,4 +24,7 @@ const sdk = new SDK({
   // API call with @ringcentral/sdk as HTTP engine
   const extensionInfo = await rc.restapi().account().extension().get();
   console.log(extensionInfo.extensionNumber);
+
+  await rc.revoke();
+  await sdk.logout();
 })();
